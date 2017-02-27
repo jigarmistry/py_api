@@ -1,10 +1,12 @@
 from flask import Flask
 from admin.views import admin
+from website.views import site
 from api.api import api
 from db.models import db, create_tables
 
 app = Flask(__name__)
 app.register_blueprint(admin)
+app.register_blueprint(site)
 app.register_blueprint(api)
 
 
